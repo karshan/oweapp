@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+
+    <meta charset="urf-8" />
+    <link rel="stylesheet" href="jquery.mobile-1.0rc1.min.css" />
+    <script src="jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>
+    <script src="jquery.mobile-1.0rc1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="main.js"></script>
+
+  </head>
+
+  <body onload="init();">
+
+    <div data-role="page" id="login_page">
+
+      <div>
+        <h1>Login</h1>
+      </div>
+
+      <div data-role="fieldcontain">
+        <label for="user">User: </label>
+        <input type="text" name="user" id="user" value="" />
+      </div>
+
+      <div class="ui-btn ui-btn-corner-all ui-shadow">
+        <button type="submit" name="submit" value="submit-value" class="ui-btn-hidden" onclick="login()">Submit</button>
+      </div>
+
+    </div>
+
+    <div data-role="page" id="overview_page">
+
+      <div>
+        <h1 id="overview_hdr"></h1>
+      </div>
+
+      <div data-role="content" id="overviewcontent">
+        <ul data-role="listview" id="request_list">
+        </ul>
+      </div>
+
+      <div class="ui-btn ui-btn-corner-all ui-shadow">
+        <button type="submit" value="submit-value" class="ui-btn-hidden" onclick='$.mobile.changePage("#tl_page");'>Transaction List</button>
+      </div>
+
+      <div class="ui-btn ui-btn-corner-all ui-shadow">
+        <button type="submit" name="updatebtn" value="submit-value" class="ui-btn-hidden" onclick="update()">Update</button>
+      </div>
+
+      <div id="doing_ajax">
+        <p><img src="images/ajax-loader.gif" />Updating</p>
+      </div>
+
+    </div>
+
+    <div data-role="page" id="tl_page">
+
+      <div data-role="content" id="tl_content">
+        <ul data-role="listview" id="tl_list">
+        </ul>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
