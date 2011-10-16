@@ -131,10 +131,10 @@ function add_transaction()
         }
     },
     function() {
-        $("addt_ajax").show();
+        $("#addt_ajax").show();
     },
     function() {
-        $("addt_ajax").hide();
+        $("#addt_ajax").hide();
     });
 }
 
@@ -165,8 +165,9 @@ function accept_req(accept)
         $("#acceptdg_loader").show();
     },
     function() {
-        $("acceptdg_loader").hide();
+        $("#acceptdg_loader").hide();
     });
+    $('.ui-dialog').dialog('close').
 }
 
 $("#tl_page").live("pageshow", function(jqm_obj) {
