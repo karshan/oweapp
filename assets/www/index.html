@@ -3,11 +3,12 @@
 
   <head>
 
-    <meta charset="urf-8" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="jquery.mobile1.0rc1.min.css" />
     <script src="jquery1.6.4.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap1.1.0.js"></script>
     <script src="jquery.mobile1.0rc1.min.js"></script>
+    <script type="text/javascript" src=json2.js></script>
 	<script type="text/javascript" charset="utf-8" src="main.js"></script>
 
   </head>
@@ -16,7 +17,7 @@
 
     <div data-role="page" id="login_page">
 
-      <div>
+      <div data-role="header" data-theme="b">
         <h1>Login</h1>
       </div>
 
@@ -33,17 +34,21 @@
 
     <div data-role="page" id="overview_page">
 
-      <div>
+    <!-- data-theme="b" makes the header blue =) -->
+      <div data-role="header" data-theme="b">
+        <a href="index.html#login_page" data-transition="fade">Login</a>
         <h1 id="overview_hdr"></h1>
+        <a href="index.html#tl_page" data-transition="fade">Transaction List</a>
       </div>
 
       <div data-role="content" id="overviewcontent">
+        <h3>Received Requests:</h3>
         <ul data-role="listview" id="request_list">
         </ul>
       </div>
 
       <div class="ui-btn ui-btn-corner-all ui-shadow">
-        <button type="submit" value="submit-value" class="ui-btn-hidden" onclick='$.mobile.changePage("#tl_page");'>Transaction List</button>
+        <button type="submit" value="submit-value" class="ui-btn-hidden" onclick='$.mobile.changePage("#addt_page", { "transition" : "fade" })'>Add Transaction</button>
       </div>
 
       <div class="ui-btn ui-btn-corner-all ui-shadow">
@@ -58,9 +63,44 @@
 
     <div data-role="page" id="tl_page">
 
+      <div data-role="header" data-theme="b">
+        <a href="index.html#overview_page" data-transition="fade">Overview</a>
+        <h1>Transaction List</h1>
+      </div>
+
       <div data-role="content" id="tl_content">
         <ul data-role="listview" id="tl_list">
         </ul>
+      </div>
+
+    </div>
+
+    <div data-role="page" id="addt_page">
+
+      <div data-role="header" data-theme="b">
+        <a href="index.html#overview_page" data-transition="fade">Overview</a>
+        <h1>Add Transaction</h1>
+      </div>
+
+      <div data-role="content">
+          <div data-role="fieldcontain">
+            <label for="addt_who">Who: </label>
+            <input type="text" name="addt_who" id="addt_who" value="" />
+            <label for="addt_what">What: </label>
+            <input type="text" name="addt_what" id="addt_what" value="" />
+            <label for="addt_when">When: </label>
+            <input type="text" name="addt_when" id="addt_when" value="" />
+            <label for="addt_amt">Amount: </label>
+            <input type="text" name="addt_amt" id="addt_amt" value="" />
+          </div>
+      </div>
+
+      <div class="ui-btn ui-btn-corner-all ui-shadow">
+        <button type="submit" name="updatebtn" value="submit-value" class="ui-btn-hidden" onclick="add_transaction()">Add</button>
+      </div>
+
+      <div id="addt_ajax">
+        <p><img src="images/loader.gif" />Updating</p>
       </div>
 
     </div>

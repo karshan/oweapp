@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="jquery.mobile1.0rc1.min.css" />
+    <script src="jquery1.6.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap1.1.0.js"></script>
+    <script src="jquery.mobile1.0rc1.min.js"></script>
+    <script type="text/javascript" src=json2.js></script>
+	<script type="text/javascript" charset="utf-8" src="main.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+      <div data-role="header" data-theme="b">
+        <h1>Accept?</h1>
+      </div>
+
+      <div data-role="content" data-theme="b" class="ui-content">
+
+          <a href="index.html" data-role="button" data-rel="back" data-theme="b" onclick="accept_req(true);">Yes</a>
+
+          <a href="index.html" data-role="button" data-rel="back" data-theme="b" onclick="accept_req(false);">No</a>
+
+          <div id="acceptdg_loader" style="display: none">
+            <p><img src="images/loader.gif" />Updating</p>
+          </div>
+
+      </div>
+
+    </div>
+</body>
+</html>
