@@ -368,7 +368,7 @@ PhoneGap.Channel.join(function() {
     // received from native side, and any user defined initialization channels.
     PhoneGap.Channel.join(function() {
         // Let native code know we are inited on JS side
-        prompt("", "gap_init:");
+//XXX commented out by me        prompt("", "gap_init:");
 
         PhoneGap.onDeviceReady.fire();
 
