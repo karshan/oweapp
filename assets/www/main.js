@@ -167,7 +167,7 @@ function accept_req(accept)
     function() {
         $("#acceptdg_loader").hide();
     });
-    $('.ui-dialog').dialog('close').
+    $('.ui-dialog').dialog('close');
 }
 
 $("#tl_page").live("pageshow", function(jqm_obj) {
